@@ -86,6 +86,7 @@ class GoogleMapOptions {
     this.tiltGesturesEnabled,
     this.trackCameraPosition,
     this.zoomGesturesEnabled,
+    this.allGesturesEnabled,
   });
 
   /// The desired position of the map camera.
@@ -125,6 +126,9 @@ class GoogleMapOptions {
   /// True if the map view should respond to zoom gestures.
   final bool zoomGesturesEnabled;
 
+  /// True if all gestures are enabled. False if all gestures are disabled.
+  final bool allGesturesEnabled;
+
   /// Default user interface options.
   ///
   /// Specifies a map view that
@@ -138,6 +142,7 @@ class GoogleMapOptions {
   /// * responds to tilt gestures; [tiltGesturesEnabled] is true
   /// * is silent about camera movement; [trackCameraPosition] is false
   /// * responds to zoom gestures; [zoomGesturesEnabled] is true
+  /// * responds to all gestures or no gestures; [allGesturesEnabled] is true/false respectively
   static final GoogleMapOptions defaultOptions = GoogleMapOptions(
     compassEnabled: true,
     cameraPosition: const CameraPosition(target: LatLng(0.0, 0.0)),
@@ -149,6 +154,7 @@ class GoogleMapOptions {
     tiltGesturesEnabled: true,
     trackCameraPosition: false,
     zoomGesturesEnabled: true,
+    allGesturesEnabled: true,
   );
 
   /// Creates a new options object whose values are the same as this instance,
@@ -172,6 +178,7 @@ class GoogleMapOptions {
       tiltGesturesEnabled: change.tiltGesturesEnabled ?? tiltGesturesEnabled,
       trackCameraPosition: change.trackCameraPosition ?? trackCameraPosition,
       zoomGesturesEnabled: change.zoomGesturesEnabled ?? zoomGesturesEnabled,
+      allGesturesEnabled: change.allGesturesEnabled ?? allGesturesEnabled,
     );
   }
 
@@ -194,6 +201,7 @@ class GoogleMapOptions {
     addIfPresent('tiltGesturesEnabled', tiltGesturesEnabled);
     addIfPresent('trackCameraPosition', trackCameraPosition);
     addIfPresent('zoomGesturesEnabled', zoomGesturesEnabled);
+    addIfPresent('allGesturesEnabled', allGesturesEnabled);
     return json;
   }
 }

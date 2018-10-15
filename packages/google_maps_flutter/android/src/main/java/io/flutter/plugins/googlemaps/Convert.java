@@ -209,6 +209,10 @@ class Convert {
     if (zoomGesturesEnabled != null) {
       sink.setZoomGesturesEnabled(toBoolean(zoomGesturesEnabled));
     }
+    final Object allGesturesEnabled = data.get("allGesturesEnabled");
+    if (zoomGesturesEnabled != null) {
+      sink.setAllGesturesEnabled(toBoolean(allGesturesEnabled));
+    }
   }
 
   static void interpretMarkerOptions(Object o, MarkerOptionsSink sink) {

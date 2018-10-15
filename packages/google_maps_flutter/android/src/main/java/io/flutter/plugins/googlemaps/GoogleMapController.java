@@ -393,4 +393,9 @@ final class GoogleMapController
   public void setZoomGesturesEnabled(boolean zoomGesturesEnabled) {
     googleMap.getUiSettings().setZoomGesturesEnabled(zoomGesturesEnabled);
   }
+
+  @Override
+  public void setAllGesturesEnabled(boolean allGesturesEnabled) {
+    googleMap.getUiSettings().setAllGesturesEnabled(allGesturesEnabled);
+  }
 }
