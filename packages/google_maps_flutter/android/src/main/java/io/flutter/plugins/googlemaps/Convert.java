@@ -210,7 +210,7 @@ class Convert {
       sink.setZoomGesturesEnabled(toBoolean(zoomGesturesEnabled));
     }
     final Object allGesturesEnabled = data.get("allGesturesEnabled");
-    if (zoomGesturesEnabled != null) {
+    if (allGesturesEnabled != null) {
       sink.setAllGesturesEnabled(toBoolean(allGesturesEnabled));
     }
   }
